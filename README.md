@@ -44,6 +44,17 @@
 </persistence>
 ```
 
+### Como salvar UUID Hibernate
+
+```java
+@Id
+@GeneratedValue(generator = "UUID")
+@GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
+@Column(name = "id", columnDefinition = "char(36)")
+@Type(type = "org.hibernate.type.UUIDCharType")
+private UUID id;
+```
+
 # One To One
 
 ![image](https://user-images.githubusercontent.com/66011013/170285024-769eee87-32f6-41ed-a04e-c15f2d5996b7.png)
